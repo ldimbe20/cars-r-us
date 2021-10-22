@@ -2,7 +2,7 @@
 import { Interiors } from "./interior.js"  
 import { Paints } from "./paint.js"
 import { Wheels } from "./wheels.js"
-import { Technology } from "./technology.js"
+import { Technologys } from "./technology.js"
 
 
 document.addEventListener(
@@ -30,7 +30,7 @@ export const AllDetailing = () => {
             </section>
             <section class="choices__technology options">
             <h2>Technology</h2>
-            ${Technology()}
+            ${Technologys()}
         </section>
         </article>
 

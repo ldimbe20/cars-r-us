@@ -14,18 +14,28 @@ document.addEventListener( //
     }
 )
 
-export const Technology = () => {  
-    let html = "<ul>" //creating an unordered list in html
-
-    // This is how you have been converting objects to <li> elements
-    for (const technology of technologys) { // making a forof loop that iterates through the technology array
-        html += `<li>              
-            <input type="radio" name="technology" value="${technology.id}" /> ${technology.id}
-        </li>` 
+document.addEventListener( // 
+    "change",
+    (changeEvent) => {
+        if (changeEvent.target.id === "technologies") {  //change event target is paints
+            const chosenOption = changeEvent.target.value  //variable is made to equal the "paints" target
+            console.log(chosenOption)  // "1" or "2" // console log the variable chosen option
+        }
     }
-    //using the addition assignment operator to create a list item that contains the radio button
+)
 
-    html += "</ul>" //using addition operator to add an ending unordered list tag to each new list item
-    return html  //returning the html so it shows up in index
+export const Technologys = () => {  // creating a function that is a dropdown html element
+    let html = "<Paints>"  // html element name paints 
+    html += '<select id="paints">'// using addition assignment to  
+    html += '<option value="0"> Select your Paint Type </option>'
+
+const arrayOfOptions= technologys.map ( (technology) => {
+        return `<option value="${technology.id}"> ${technology.type} </option>`
+    }
+)
+
+    html += arrayOfOptions.join ("")
+    html += "</select>"
+    return html  
+
 }
-
